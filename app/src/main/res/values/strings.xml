@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ShivRana_COMP304_Assign6</string>
+    <string name="selection">Please select one of the following</string>
+    <string name="smsApp">Messaging App</string>
+    <string name="Sms">Sms App</string>
+    <string name="sender">Sender</string>
+    <string name="messsage">Message will come here</string>
+</resources>
