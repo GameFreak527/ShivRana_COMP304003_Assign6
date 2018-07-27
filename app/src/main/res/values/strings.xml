@@ -3,6 +3,7 @@
     <string name="selection">Please select one of the following</string>
     <string name="smsApp">Messaging App</string>
     <string name="Sms">Sms App</string>
-    <string name="sender">Sender</string>
+    <string name="sender">Mobile Number</string>
     <string name="messsage">Message will come here</string>
+    <string name="planTrip">Plan Trip</string>
 </resources>

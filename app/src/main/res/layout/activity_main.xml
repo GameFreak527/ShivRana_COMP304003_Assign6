@@ -5,24 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/mainbackground">
 
     <TextView
         style="@style/Title"
+        android:layout_marginTop="70dp"
+        android:textColor="@color/WhiteSmoke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/selection"/>
 
-    <TextView
-        style="@style/Content"
+    <TableLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/smsApp"/>
+        android:layout_height="wrap_content">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/smsButton"
-        android:text="@string/Sms"/>
+    <TableRow
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp">
+        <TextView
+            style="@style/Content"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/smsApp"/>
 
+        <Button
+            android:id="@+id/smsButton"
+            style="@style/Editable_Controls"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/chat"/>
+    </TableRow>
+        <TableRow
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp">
+            <TextView
+                style="@style/Content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/planTrip"/>
+
+            <Button
+                android:id="@+id/tripPlanBtn"
+                style="@style/Editable_Controls"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/trip" />
+        </TableRow>
+    </TableLayout>
 </LinearLayout>

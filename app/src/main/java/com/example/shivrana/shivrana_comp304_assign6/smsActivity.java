@@ -23,22 +23,49 @@ public class smsActivity extends AppCompatActivity {
     TextView receivedMsg;
     EditText msgContent,senderNumber;
     Button sendMessage;
-    String message,number;
+    String message,number,outputMessage="";                                            ;
     String SENT = "SMS_SENT";
     String DELIVERED = "SMS_DELIVERED";
     PendingIntent sentPI,deliveredPI;
+    IntentFilter intentFilter;
     BroadcastReceiver smsSentReceiver,smsDeliveredReceiver;
+
+    private BroadcastReceiver intentReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            outputMessage += intent.getExtras().getString("message")+"\n";
+            receivedMsg.setText(outputMessage);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sms);
 
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.READ_PHONE_STATE)
+                != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this,
+                Manifest.permission.SEND_SMS)
+                != PackageManager.PERMISSION_GRANTED &&ContextCompat.checkSelfPermission(this,
+                Manifest.permission.RECEIVE_SMS)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.SEND_SMS, Manifest.permission.READ_SMS}, 1);
+        }
+
+        intentFilter = new IntentFilter();
+        intentFilter.addAction("SMS_RECEIVED_ACTION");
+        registerReceiver(intentReceiver,intentFilter);
+
         //Declaration of controls and useful things
         declaration();
 
         //ButtonClick Event
         btnEvent();
+
+
     }
 
     public void declaration(){
@@ -111,10 +138,20 @@ public class smsActivity extends AppCompatActivity {
             public void onClick(View v) {
                     number = senderNumber.getText().toString();
                     message = msgContent.getText().toString();
+                    if(number.length() != 0 || message.length() != 0){
+                        //Adding the sent message to the Textview
+                        outputMessage +="\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+message+"\n";
+                        receivedMsg.setText(outputMessage);
 
-                    //This is how to send a message
-                    SmsManager sms = SmsManager.getDefault();
-                    sms.sendTextMessage(number,null,message,sentPI,deliveredPI);
+                        //This is how to send a message
+                        SmsManager sms = SmsManager.getDefault();
+                        sms.sendTextMessage(number,null,message,sentPI,deliveredPI);
+                        msgContent.setText("");
+                    }
+                    else{
+                        Toast.makeText(smsActivity.this, "Phone number or message content is missing", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
         });
     }

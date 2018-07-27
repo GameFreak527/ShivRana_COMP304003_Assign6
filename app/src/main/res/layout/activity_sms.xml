@@ -5,15 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".smsActivity"
+    android:background="@drawable/background"
     android:orientation="vertical">
 
     <TextView
         style="@style/Content"
+        android:layout_marginBottom="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sender"/>
 
     <EditText
+        style="@style/Editable_Controls"
         android:id="@+id/senderNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,26 +27,34 @@
         android:layout_height="match_parent">
 
         <EditText
+            style="@style/Editable_Controls"
             android:id="@+id/msgContent"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
             android:singleLine="true" />
+
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Content"
             android:id="@+id/sendBtn"
-            android:layout_toEndOf="@id/msgContent"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="10dp"
             android:layout_alignParentBottom="true"
-            />
+            android:layout_toEndOf="@id/msgContent"
+            android:background="@drawable/send" />
 
         <TextView
+            style="@style/Content"
             android:id="@+id/receivedMsg"
+            android:textColor="@color/AntiqueWhite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="64dp"
+            android:layout_marginBottom="70dp"
             android:text="@string/messsage" />
     </RelativeLayout>
 
