@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TTCActivity"
+    android:orientation="vertical"
+    android:background="@drawable/transitbackground">
+
+    <TextView
+        android:layout_marginStart="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="planYourTrip"
+        style="@style/Title"/>
+
+    <TextView
+        style="@style/Content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/from"/>
+    <EditText
+        android:textColor="@color/colorPrimaryDark"
+        android:minWidth="300dp"
+        style="@style/Editable_Controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fromLocation"/>
+    <TextView
+        style="@style/Content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/destination"/>
+    <EditText
+        android:minWidth="300dp"
+        android:textColor="@color/colorPrimaryDark"
+        style="@style/Editable_Controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/destinationLocaiton"/>
+
+    <Button
+        android:layout_width="400dp"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/tripSubmit"
+        android:text="@string/generateDirection"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="40dp"/>
+
+    <TextView
+        android:textColor="@color/DarkRed"
+        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tripResult"/>
+
+
+</LinearLayout>

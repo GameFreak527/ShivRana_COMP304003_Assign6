@@ -9,7 +9,7 @@
     </style>
 
     <style name="Title">
-        <item name="android:textColor">@color/DarkViolet</item>
+        <item name="android:textColor">@color/WhiteSmoke</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">28sp</item>
         <item name="android:layout_marginBottom">20dp</item>

@@ -8,6 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     Button smsButton;
+    Button tripButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     //Declaration of all the things
     public void declaration(){
      smsButton = findViewById(R.id.smsButton);
+     tripButton = findViewById(R.id.tripPlanBtn);
     }
 
     //All the btn Events are below
@@ -30,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getBaseContext(),smsActivity.class));
+            }
+        });
+
+        tripButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(),WebActivity.class));
             }
         });
     }

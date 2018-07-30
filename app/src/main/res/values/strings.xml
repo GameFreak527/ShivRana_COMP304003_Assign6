@@ -6,4 +6,8 @@
     <string name="sender">Mobile Number</string>
     <string name="messsage">Message will come here</string>
     <string name="planTrip">Plan Trip</string>
+    <string name="planYourTrip">Plan Your Trip</string>
+    <string name="from">From</string>
+    <string name="destination">Destination</string>
+    <string name="generateDirection">Show Direction</string>
 </resources>
